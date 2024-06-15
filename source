@@ -1,10 +1,25 @@
--- Define the library function
-local function generateLoadstring(link)
-    return 'loadstring(game:HttpGet("' .. link .. '"))()'
+i made changes :
+-- Paste your link here
+local linkMaker = [[
+--// Paste your link here
+]]
+
+-- Function to create loadstring from a link
+local function createLoadstringLink(link)
+return 'loadstring(game
+("' .. link .. '"))()'
 end
 
--- Run the main function
-main()
+-- Convert linkMaker to loadstring format
+local loadstringLink = createLoadstringLink(linkMaker)
 
--- Return the library function for reusability
-return generateLoadstring
+-- Print message using warn
+warn("Loadstring Done.")
+
+-- Print the loadstring
+print(loadstringLink)
+
+-- Copy to clipboard (using setclipboard)
+if setclipboard then
+setclipboard(loadstringLink)
+end
