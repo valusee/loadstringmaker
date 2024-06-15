@@ -1,0 +1,10 @@
+-- Define the library function
+local function generateLoadstring(link)
+    return 'loadstring(game:HttpGet("' .. link .. '"))()'
+end
+
+-- Run the main function
+main()
+
+-- Return the library function for reusability
+return generateLoadstring
