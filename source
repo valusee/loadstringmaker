@@ -1,20 +1,14 @@
--- Function to create loadstring from a link
 local function createLoadstringLink(link)
     return 'loadstring(game:HttpGet("' .. link .. '"))()'
 end
 
--- Function to generate loadstring, print message, and copy to clipboard
 local function generateLoadstringAndCopy(link)
-    -- Convert link to loadstring format
     local loadstringLink = createLoadstringLink(link)
 
-    -- Print message using warn
     warn("Loadstring Done.")
 
-    -- Print the loadstring
     print(loadstringLink)
 
-    -- Copy to clipboard (using setclipboard if available)
     if setclipboard then
         setclipboard(loadstringLink)
     end
