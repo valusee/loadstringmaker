@@ -1,24 +1,24 @@
--- Paste your link here
-local linkMaker = [[
---// Paste your link here
-]]
-
 -- Function to create loadstring from a link
 local function createLoadstringLink(link)
-return 'loadstring(game
-("' .. link .. '"))()'
+    return 'loadstring(game:HttpGet("' .. link .. '"))()'
 end
 
--- Convert linkMaker to loadstring format
-local loadstringLink = createLoadstringLink(linkMaker)
+-- Function to generate loadstring, print message, and copy to clipboard
+local function generateLoadstringAndCopy(link)
+    -- Convert link to loadstring format
+    local loadstringLink = createLoadstringLink(link)
 
--- Print message using warn
-warn("Loadstring Done.")
+    -- Print message using warn
+    warn("Loadstring Done.")
 
--- Print the loadstring
-print(loadstringLink)
+    -- Print the loadstring
+    print(loadstringLink)
 
--- Copy to clipboard (using setclipboard)
-if setclipboard then
-setclipboard(loadstringLink)
+    -- Copy to clipboard (using setclipboard if available)
+    if setclipboard then
+        setclipboard(loadstringLink)
+    end
 end
+
+return generateLoadstringAndCopy
+
